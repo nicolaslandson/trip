@@ -39,7 +39,7 @@
 async function validateCity(city) {
   const slug = city.toLowerCase().trim().replace(/\s+/g, '-');
   try {
-    const res = await fetch("https://api.teleport.org/api/urban_areas/");
+    const res = await fetch(`https://api.teleport.org/api/urban_areas/slug/${slug}/`);
     const data = await res.json();
     const exists = data._links["ua:item"].some(item => item.href.includes(`/slug:${slug}/`));
     return exists;
