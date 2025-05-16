@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trip Budget</title>
+</head>
+<body>
+  <h1>Trip Budget Estimator</h1>
+  <p id="result">Loading...</p>
+
+  <div id="booking" style="margin-top: 30px; display: none;">
+    <a href="https://www.booking.com/index.html?aid=YOUR_REF_ID" target="_blank">
+      <img src="https://cf.bstatic.com/static/img/affiliate_base/banner/728x90/728x90.jpg" 
+           alt="Book your stay with Booking.com" width="728" height="90" style="border:0;" />
+    </a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const city = params.get("city") || "Barcelona";
+    const days = params.get("days") || "3";
+
+    fetch("https://hook.eu1.make.com/YOUR-WEBHOOK-ID", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ city, days })
+    })
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById("result").textContent = "Estimated budget: €" + data.budget;
+      document.getElementById("booking").style.display = "block";
+    })
+    .catch(e => {
+      document.getElementById("result").textContent = "Error calculating budget.";
+    });
+  </script>
+</body>
+</html>
