@@ -3,6 +3,7 @@
   const result = document.getElementById("result");
   const booking = document.getElementById("booking");
 
+  // Проверка города через Teleport API
   async function validateCity(city) {
     const slug = city.trim().toLowerCase().replace(/\s+/g, '-');
     const res = await fetch(`https://api.teleport.org/api/urban_areas/slug:${slug}/`);
@@ -14,6 +15,11 @@
 
     const city = document.getElementById("city").value.trim();
     const days = parseInt(document.getElementById("days").value, 10);
+
+    if (!city || isNaN(days) || days < 1) {
+      result.textContent = "Please enter a valid city and number of days.";
+      return;
+    }
 
     result.textContent = "Validating city...";
     booking.style.display = "none";
@@ -32,13 +38,23 @@
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ city, days })
     })
-      .then(r => r.json())
-      .then(data => {
-        result.textContent = "Estimated budget: €" + data.budget;
-        booking.style.display = "block";
-      })
-      .catch(() => {
-        result.textContent = "Error calculating budget.";
-      });
+    .then(async r => {
+      const text = await r.text();
+      console.log("RAW:", text);
+      try {
+        const data = JSON.parse(text);
+        if (data.budget === "error") {
+          result.textContent = "City not found or invalid input.";
+        } else {
+          result.textContent = "Estimated budget: €" + data.budget;
+          booking.style.display = "block";
+        }
+      } catch {
+        result.textContent = "Error parsing response: " + text;
+      }
+    })
+    .catch(() => {
+      result.textContent = "Network error.";
+    });
   });
 </script>
