@@ -55,7 +55,8 @@
   console.log("RAW:", text);
   try {
     const data = JSON.parse(text);
-    result.textContent = "Estimated budget: €" + data.budget;
+    const amount = parseInt(data.budget); // ← вот это добавлено
+    result.textContent = "Estimated budget: €" + amount;
     booking.style.display = "block";
   } catch {
     result.textContent = "Error parsing response: " + text;
