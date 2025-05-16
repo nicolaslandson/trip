@@ -1,71 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trip Budget Estimator</title>
-</head>
-<body>
-  <h1>Trip Budget Estimator</h1>
+<script>
+  const form = document.getElementById("budget-form");
+  const result = document.getElementById("result");
+  const booking = document.getElementById("booking");
 
-  <form id="budget-form">
-    <label>
-      City:
-      <input type="text" id="city" placeholder="Madrid" required />
-    </label>
-    <br />
-    <label>
-      Days:
-      <input type="number" id="days" value="3" min="1" required />
-    </label>
-    <br /><br />
-    <button type="submit">Calculate</button>
-  </form>
-
-  <p id="result" style="margin-top: 20px;">...</p>
-
-  <div id="booking" style="margin-top: 30px; display: none;">
-    <a href="https://www.booking.com/index.html?aid=YOUR_REF_ID" target="_blank">
-      <img src="https://cf.bstatic.com/static/img/affiliate_base/banner/728x90/728x90.jpg"
-           alt="Book your stay with Booking.com" width="728" height="90" style="border:0;" />
-    </a>
-  </div>
-
-  <script>
-    const form = document.getElementById("budget-form");
-    const result = document.getElementById("result");
-    const booking = document.getElementById("booking");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const city = document.getElementById("city").value.trim();
-      const days = parseInt(document.getElementById("days").value, 10);
-
-      result.textContent = "Calculating...";
-      booking.style.display = "none";
-
-      fetch("https://hook.eu2.make.com/qqat0dkk3irc0ir3okc5axn02904zcif", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ city, days })
-      })
-.then(async r => {
-  const text = await r.text();
-  console.log("RAW:", text);
-  try {
-    const data = JSON.parse(text);
-    const amount = parseInt(data.budget); // ← вот это добавлено
-    result.textContent = "Estimated budget: €" + amount;
-    booking.style.display = "block";
-  } catch {
-    result.textContent = "Error parsing response: " + text;
+  async function validateCity(city) {
+    const slug = city.trim().toLowerCase().replace(/\s+/g, '-');
+    const res = await fetch(`https://api.teleport.org/api/urban_areas/slug:${slug}/`);
+    return res.ok;
   }
-})
-        .catch(() => {
-          result.textContent = "Error calculating budget.";
-        });
-    });
-  </script>
-</body>
-</html>
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const city = document.getElementById("city").value.trim();
+    const days = parseInt(document.getElementById("days").value, 10);
+
+    result.textContent = "Validating city...";
+    booking.style.display = "none";
+
+    const isValid = await validateCity(city);
+
+    if (!isValid) {
+      result.textContent = "City not found.";
+      return;
+    }
+
+    result.textContent = "Calculating...";
+
+    fetch("https://hook.eu2.make.com/qqat0dkk3irc0ir3okc5axn02904zcif", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ city, days })
+    })
+      .then(r => r.json())
+      .then(data => {
+        result.textContent = "Estimated budget: €" + data.budget;
+        booking.style.display = "block";
+      })
+      .catch(() => {
+        result.textContent = "Error calculating budget.";
+      });
+  });
+</script>
