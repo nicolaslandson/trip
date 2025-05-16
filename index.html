@@ -11,7 +11,7 @@
   <form id="budget-form">
     <label>
       City:
-      <input type="text" id="city" placeholder="Madrid" required />
+      <input type="text" id="city" placeholder="madrid" required />
     </label>
     <br />
     <label>
@@ -37,15 +37,21 @@
     const booking = document.getElementById("booking");
 
     async function validateCity(city) {
-      const slug = city.trim().toLowerCase().replace(/\s+/g, '-');
-      const res = await fetch(`https://api.teleport.org/api/urban_areas/slug:${slug}/`);
-      return res.ok;
+      const slug = city.toLowerCase().trim().replace(/\s+/g, '-');
+      try {
+        const res = await fetch(`https://api.teleport.org/api/urban_areas/slug:${slug}/`);
+        return res.ok;
+      } catch (err) {
+        console.error("City validation error:", err);
+        return false;
+      }
     }
 
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      const city = document.getElementById("city").value.trim();
+      const cityInput = document.getElementById("city").value.trim();
+      const city = cityInput.toLowerCase();
       const days = parseInt(document.getElementById("days").value, 10);
 
       if (!city || isNaN(days) || days < 1) {
