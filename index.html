@@ -50,11 +50,17 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ city, days })
       })
-        .then(r => r.json())
-        .then(data => {
-          result.textContent = "Estimated budget: €" + data.budget;
-          booking.style.display = "block";
-        })
+.then(async r => {
+  const text = await r.text();
+  console.log("RAW:", text);
+  try {
+    const data = JSON.parse(text);
+    result.textContent = "Estimated budget: €" + data.budget;
+    booking.style.display = "block";
+  } catch {
+    result.textContent = "Error parsing response: " + text;
+  }
+})
         .catch(() => {
           result.textContent = "Error calculating budget.";
         });
