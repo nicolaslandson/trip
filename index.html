@@ -36,16 +36,18 @@
     const result = document.getElementById("result");
     const booking = document.getElementById("booking");
 
-    async function validateCity(city) {
-      const slug = city.toLowerCase().trim().replace(/\s+/g, '-');
-      try {
-        const res = await fetch(`https://api.teleport.org/api/urban_areas/slug:${slug}/`);
-        return res.ok;
-      } catch (err) {
-        console.error("City validation error:", err);
-        return false;
-      }
-    }
+async function validateCity(city) {
+  const slug = city.toLowerCase().trim().replace(/\s+/g, '-');
+  try {
+    const res = await fetch("https://api.teleport.org/api/urban_areas/");
+    const data = await res.json();
+    const exists = data._links["ua:item"].some(item => item.href.includes(`/slug:${slug}/`));
+    return exists;
+  } catch (err) {
+    console.error("City validation error:", err);
+    return false;
+  }
+}
 
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
