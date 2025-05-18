@@ -42,18 +42,6 @@
     const form = document.getElementById("budget-form");
     const result = document.getElementById("result");
     const booking = document.getElementById("booking");
-
-    async function validateCity(city) {
-      const query = encodeURIComponent(city.trim());
-      try {
-        const res = await fetch(`https://nominatim.openstreetmap.org/search?city=${query}&format=json`);
-        const data = await res.json();
-        return data.length > 0;
-      } catch {
-        return false;
-      }
-    }
-
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
@@ -65,15 +53,6 @@ if (!city || isNaN(days) || days < 1 || days > 7) {
   booking.style.display = "none";
   return;
 }
-
-      result.textContent = "Validating city...";
-      booking.style.display = "none";
-
-      if (!(await validateCity(city))) {
-        result.textContent = "City not found.";
-        return;
-      }
-
       result.textContent = "Calculating...";
 
       fetch("https://hook.eu2.make.com/qqat0dkk3irc0ir3okc5axn02904zcif", {
