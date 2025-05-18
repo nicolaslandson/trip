@@ -21,7 +21,7 @@
           </div>
           <div class="mb-3">
             <label for="days" class="form-label">Days</label>
-            <input type="number" id="days" class="form-control" value="3" min="1" required />
+            <input type="number" id="days" class="form-control" value="3" min="1" max="7" required />
           </div>
           <button type="submit" class="btn btn-primary w-100">Calculate</button>
         </form>
@@ -60,11 +60,11 @@
       const city = document.getElementById("city").value.trim().toLowerCase();
       const days = parseInt(document.getElementById("days").value, 10);
 
-      if (!city || isNaN(days) || days < 1) {
-        result.textContent = "Please enter a valid city and number of days.";
-        booking.style.display = "none";
-        return;
-      }
+if (!city || isNaN(days) || days < 1 || days > 7) {
+  result.textContent = "Please enter a valid city and 1–7 days.";
+  booking.style.display = "none";
+  return;
+}
 
       result.textContent = "Validating city...";
       booking.style.display = "none";
