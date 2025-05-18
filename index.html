@@ -72,29 +72,36 @@ async function validateCity(city) {
 
       result.textContent = "Calculating...";
 
-      fetch("https://hook.eu2.make.com/qqat0dkk3irc0ir3okc5axn02904zcif", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ city, days })
-      })
-      .then(async r => {
-        const text = await r.text();
-        console.log("RAW:", text);
-        try {
-          const data = JSON.parse(text);
-          if (data.budget === "error") {
-            result.textContent = "City not found or invalid input.";
-          } else {
-            result.textContent = "Estimated budget: €" + data.budget;
-            booking.style.display = "block";
-          }
-        } catch {
-          result.textContent = "Error parsing response: " + text;
-        }
-      })
-      .catch(() => {
-        result.textContent = "Network error.";
-      });
+fetch("https://hook.eu2.make.com/qqat0dkk3irc0ir3okc5axn02904zcif", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ city, days })
+})
+.then(async r => {
+  const contentType = r.headers.get("content-type");
+  const text = await r.text();
+  console.log("RAW:", text);
+
+  if (!contentType || !contentType.includes("application/json")) {
+    result.textContent = "Unexpected response: " + text;
+    return;
+  }
+
+  try {
+    const data = JSON.parse(text);
+    if (data.budget === "error") {
+      result.textContent = "City not found or invalid input.";
+    } else {
+      result.textContent = "Estimated budget: €" + data.budget;
+      booking.style.display = "block";
+    }
+  } catch {
+    result.textContent = "Error parsing response: " + text;
+  }
+})
+.catch(() => {
+  result.textContent = "Network error.";
+});
     });
   </script>
 </body>
