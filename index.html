@@ -90,13 +90,13 @@ try {
   const data = JSON.parse(text);
   const budget = Number(data.budget);
 
-  if (!budget || isNaN(budget)) {
-    result.textContent = "City not found or invalid input.";
-  } else {
-    result.textContent = "Estimated budget: €" + budget;
-    booking.style.display = "block";
-    console.log("Booking banner shown");
-  }
+if (!budget || isNaN(budget)) {
+  result.textContent = "City not found or invalid input.";
+} else {
+  result.textContent = "Estimated budget: €" + budget;
+  booking.style.setProperty("display", "block", "important");
+  console.log("Booking banner shown");
+}
 } catch {
   result.textContent = "Error parsing response: " + text;
 }
