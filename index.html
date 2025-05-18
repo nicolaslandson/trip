@@ -86,18 +86,20 @@ fetch("https://hook.eu2.make.com/qqat0dkk3irc0ir3okc5axn02904zcif", {
     result.textContent = "Unexpected response: " + text;
     return;
   }
+try {
+  const data = JSON.parse(text);
+  const budget = Number(data.budget);
 
-  try {
-    const data = JSON.parse(text);
-    if (data.budget === "error") {
-      result.textContent = "City not found or invalid input.";
-    } else {
-      result.textContent = "Estimated budget: €" + data.budget;
-      booking.style.display = "block";
-    }
-  } catch {
-    result.textContent = "Error parsing response: " + text;
+  if (!budget || isNaN(budget)) {
+    result.textContent = "City not found or invalid input.";
+  } else {
+    result.textContent = "Estimated budget: €" + budget;
+    booking.style.display = "block";
+    console.log("Booking banner shown");
   }
+} catch {
+  result.textContent = "Error parsing response: " + text;
+}
 })
 .catch(() => {
   result.textContent = "Network error.";
