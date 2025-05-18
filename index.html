@@ -37,16 +37,11 @@
     const booking = document.getElementById("booking");
 
 async function validateCity(city) {
-  const slug = city.toLowerCase().trim().replace(/\s+/g, '-');
-
+  const query = encodeURIComponent(city.trim());
   try {
-    const res = await fetch("https://api.teleport.org/api/urban_areas/");
+    const res = await fetch(`https://nominatim.openstreetmap.org/search?city=${query}&format=json`);
     const data = await res.json();
-    const slugs = data._links["ua:item"].map(item =>
-      item.href.match(/slug:([^/]+)/)[1]
-    );
-
-    return slugs.includes(slug);
+    return data.length > 0;
   } catch (err) {
     console.error("City validation error:", err);
     return false;
