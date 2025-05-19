@@ -57,9 +57,8 @@
 
   result.textContent = "Calculating...";
 
-const prompt = `You are a strict travel cost calculator. Your task is to reply with a single integer (no euro sign, no words, no explanation) that represents the total estimated travel budget in euros for a tourist staying ${days} days in ${city}. 
+  const prompt = `You are a strict travel cost calculator. Your task is to reply with a single integer (no euro sign, no words, no explanation) that represents the total estimated travel budget in euros for a tourist staying ${days} days in ${city}. If you cannot calculate it, reply ONLY with: error.`;
 
-If you cannot calculate it, reply ONLY with: error.`;
   try {
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -75,16 +74,24 @@ If you cannot calculate it, reply ONLY with: error.`;
     });
 
     const data = await response.json();
-    const answer = data.choices?.[0]?.message?.content?.match(/\d+/)?.[0];
+    const rawAnswer = data.choices?.[0]?.message?.content?.trim().toLowerCase();
 
-    if (answer) {
-      result.textContent = `Estimated budget: €${answer}`;
-      booking.style.display = "block";
+    if (rawAnswer === "error") {
+      result.textContent = "City not found or invalid input.";
+      booking.style.display = "none";
     } else {
-      result.textContent = "Could not estimate budget.";
+      const answer = rawAnswer.match(/\d+/)?.[0];
+      if (answer) {
+        result.textContent = `Estimated budget: €${answer}`;
+        booking.style.display = "block";
+      } else {
+        result.textContent = "Could not estimate budget.";
+        booking.style.display = "none";
+      }
     }
   } catch (err) {
     result.textContent = "API error.";
+    booking.style.display = "none";
   }
 });
   </script>
