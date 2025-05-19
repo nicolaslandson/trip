@@ -38,19 +38,38 @@
     </div>
   </div>
 
-  <script>
-    const form = document.getElementById("budget-form");
-    const result = document.getElementById("result");
-    const booking = document.getElementById("booking");
+<script>
+  const form = document.getElementById("budget-form");
+  const result = document.getElementById("result");
+  const booking = document.getElementById("booking");
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+  const API_KEY = "eOPNMl/29V2C38j2QBLPAg==7r1sgRQNZlt7LDpl";
 
-      const city = document.getElementById("city").value.trim();
-      const days = parseInt(document.getElementById("days").value, 10);
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-      if (!city || isNaN(days) || days < 1 || days > 7) {
-        result.textContent = "Please enter a valid city and 1–7 days.";
+    const city = document.getElementById("city").value.trim();
+    const days = parseInt(document.getElementById("days").value, 10);
+
+    if (!city || isNaN(days) || days < 1 || days > 7) {
+      result.textContent = "Please enter a valid city and 1–7 days.";
+      booking.style.display = "none";
+      return;
+    }
+
+    result.textContent = "Checking city...";
+
+    try {
+      const response = await fetch(`https://api.api-ninjas.com/v1/city?name=${encodeURIComponent(city)}`, {
+        headers: {
+          "X-Api-Key": API_KEY
+        }
+      });
+
+      const data = await response.json();
+
+      if (!Array.isArray(data) || data.length === 0) {
+        result.textContent = "City not found.";
         booking.style.display = "none";
         return;
       }
@@ -58,7 +77,12 @@
       const budget = days * 100;
       result.textContent = `Estimated budget: €${budget}`;
       booking.style.display = "block";
-    });
-  </script>
+    } catch (err) {
+      console.error(err);
+      result.textContent = "City check failed.";
+      booking.style.display = "none";
+    }
+  });
+</script>
 </body>
 </html>
