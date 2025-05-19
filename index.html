@@ -90,7 +90,8 @@
       }
     }
   } catch (err) {
-    result.textContent = "API error.";
+  console.error(err);
+  result.textContent = "API error: " + (err.message || "Unknown");
     booking.style.display = "none";
   }
 });
