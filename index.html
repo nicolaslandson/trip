@@ -33,6 +33,10 @@
             Book your stay with Booking.com
           </a>
         </div>
+        <div id="centauro" class="text-center mt-3" style="display: none;">
+          Centauro ES
+        <a href="https://www.tkqlhce.com/click-101440156-15165285"> Centauro ES </a><img src="https://www.lduhtrp.net/image-101440156-15165285" width="1" height="1" border="0"/>
+          </div>
 
       </div>
     </div>
@@ -71,16 +75,19 @@
       if (!Array.isArray(data) || data.length === 0) {
         result.textContent = "City not found.";
         booking.style.display = "none";
+        document.getElementById("centauro").style.display = "none";
         return;
       }
 
       const budget = days * 100;
       result.textContent = `Estimated budget: €${budget}`;
       booking.style.display = "block";
+      document.getElementById("centauro").style.display = "block";
     } catch (err) {
       console.error(err);
       result.textContent = "City check failed.";
       booking.style.display = "none";
+      document.getElementById("centauro").style.display = "none";
     }
   });
 </script>
