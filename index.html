@@ -39,12 +39,12 @@
 
         <div id="booking" class="text-center" style="display: none;">
           <a href="https://hotellook.tp.st/xLYmbFT9" class="btn btn-outline-success" target="_blank" rel="noopener noreferrer">
-            Find a hotel in <span id="city-label">your city</span> (with discount)
+            Find a hotel in <span id="city-label">your city</span> (with discount – from €<span id="price-hotel">X</span>)
           </a>
         </div>
 
         <div id="centauro" class="text-center mt-3" style="display: none;">
-          Rent a car in <span id="city-centauro">your city</span> with discount
+          Rent a car in <span id="city-centauro">your city</span> with discount – from €<span id="price-car">X</span>
           <a href="https://www.tkqlhce.com/click-101440156-15165285" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
             Centauro ES
           </a>
@@ -53,7 +53,7 @@
 
         <div id="aviasales" class="text-center mt-3" style="display: none;">
           <a href="https://aviasales.tp.st/s2IQNhZd" class="btn btn-outline-primary">
-            Find cheap flights to <span id="city-aviasales">your city</span> with Aviasales
+            Find cheap flights to <span id="city-aviasales">your city</span> with Aviasales – from €<span id="price-flight">X</span>
           </a>
         </div>
 
@@ -112,11 +112,32 @@
       }
 
       const budget = days * 100;
-      result.textContent = `Example trip budget: ~€${budget}`;
+      const hotelCost = prices.hotel * days;
+const totalBudget = Math.round(hotelCost + prices.car + prices.flight);
+result.textContent = `Example trip budget: ~€${totalBudget}`;
       cityLabel.textContent = city;
       cityCentauro.textContent = city;
       cityAviasales.textContent = city;
+const cityPrices = {
+  madrid:     { hotel: 40, car: 20, flight: 50 },
+  barcelona:  { hotel: 45, car: 22, flight: 55 },
+  valencia:   { hotel: 35, car: 18, flight: 40 },
+  sevilla:    { hotel: 38, car: 19, flight: 45 },
+  granada:    { hotel: 33, car: 17, flight: 42 },
+  malaga:     { hotel: 36, car: 20, flight: 48 },
+  bilbao:     { hotel: 39, car: 21, flight: 52 },
+  alicante:   { hotel: 34, car: 18, flight: 44 },
+  zaragoza:   { hotel: 32, car: 16, flight: 38 },
+  cordoba:    { hotel: 31, car: 15, flight: 37 },
+};
 
+const defaultPrices = { hotel: 35, car: 18, flight: 45 };
+const cityKey = city.toLowerCase();
+const prices = cityPrices[cityKey] || defaultPrices;
+
+document.getElementById("price-hotel").textContent = prices.hotel;
+document.getElementById("price-car").textContent = prices.car;
+document.getElementById("price-flight").textContent = prices.flight;
       booking.style.display = "block";
       centauro.style.display = "block";
       aviasales.style.display = "block";
