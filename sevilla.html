@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seville – Spain Travel Guide</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light text-dark">
+
+<div id="nav-placeholder"></div>
+<script>
+  fetch("/nav.html")
+    .then(res => res.text())
+    .then(html => document.getElementById("nav-placeholder").innerHTML = html);
+</script>
+
+<div class="container py-5">
+  <h1 class="text-center mb-4">🇪🇸 Seville (Sevilla)</h1>
+
+  <p>
+    Seville is the cultural heart of southern Spain and the capital of Andalusia. Known for flamenco, tapas, and stunning architecture, it's a city full of energy and history.
+  </p>
+  <p>
+    Major landmarks include the Seville Cathedral, the Alcázar, Plaza de España, and the lively Triana neighborhood. The city’s orange-tree-lined streets and historic courtyards make it perfect for slow walks and evening tapas.
+  </p>
+  <p>
+    Seville is also famous for its festivals — especially Feria de Abril and Semana Santa — which transform the city into a nonstop celebration of tradition, music, and local pride.
+  </p>
+
+  <div class="text-center my-4">
+    <a href="https://www.youtube.com/watch?v=XMdUoZ2YskQ" target="_blank" class="btn btn-danger">
+      ▶️ Watch a short video about Seville
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
