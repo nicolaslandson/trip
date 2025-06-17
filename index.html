@@ -18,15 +18,12 @@
      crossorigin="anonymous"></script>
 </head>
 <body class="bg-light">
-  <nav class="text-center py-3 bg-white shadow-sm mb-4">
-    <a href="/" class="me-3 fw-bold">🏠 Home</a>
-    <a href="/spain/" class="me-3">🇪🇸 Spain</a>
-    <a href="/events/" class="me-3">🎉 Events</a>
-    <a href="/contact/" class="me-3">📬 Contact</a>
-    <a href="/privacy/">🔒 Privacy Policy</a>
-    <a href="/faq/" class="me-3 fw-bold">❓ FAQ</a>
-    <a href="/terms/">📄 Terms</a>
-  </nav>
+<div id="nav-placeholder"></div>
+<script>
+  fetch("/nav.html")
+    .then(res => res.text())
+    .then(html => document.getElementById("nav-placeholder").innerHTML = html);
+</script>
   <div class="container py-5">
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-6">
