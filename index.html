@@ -268,9 +268,13 @@
     granada:    { hotel: 33, car: 17, flight: 42 },
     malaga:     { hotel: 36, car: 20, flight: 48 },
     bilbao:     { hotel: 39, car: 21, flight: 52 },
-    alicante:   { hotel: 34, car: 18, flight: 44 },
-    zaragoza:   { hotel: 32, car: 16, flight: 38 },
     cordoba:    { hotel: 31, car: 15, flight: 37 },
+    ronda:      { hotel: 35, car: 17, flight: 45 },
+    leon:       { hotel: 30, car: 16, flight: 48 },
+    zaragoza:   { hotel: 32, car: 16, flight: 38 },
+    burgos:     { hotel: 30, car: 16, flight: 42 },
+    santander:  { hotel: 35, car: 19, flight: 60 },
+    alicante:   { hotel: 34, car: 18, flight: 44 },
   };
 
   const defaultPrices = { hotel: 35, car: 18, flight: 45 };
@@ -320,7 +324,13 @@
       booking.style.display = "block";
       centauro.style.display = "block";
       aviasales.style.display = "block";
-      guide.style.display = "block";
+      
+      // Show Seville guide only for Seville/Sevilla
+      if (cityKey === "sevilla" || cityKey === "seville") {
+        guide.style.display = "block";
+      } else {
+        guide.style.display = "none";
+      }
 
     } catch (err) {
       console.error(err);
