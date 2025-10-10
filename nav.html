@@ -1,9 +1,53 @@
-<nav class="text-center py-3 bg-white shadow-sm mb-4">
-  <a href="/" class="me-3 fw-bold">🏠 Home</a>
-  <a href="/spain/" class="me-3">🇪🇸 Spain</a>
-  <a href="/events/" class="me-3">🎉 Events</a>
-  <a href="/food/" class="me-3">🍷 Food</a>
-  <a href="/transport/" class="me-3">🚆 Transport</a>
-  <a href="/faq/" class="me-3">❓ FAQ</a>
-  <a href="/contact/" class="me-3">📬 Contact</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-primary" href="/">
+      <span style="font-size: 1.5rem;">✈️</span> Tripok.es
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">🏠 Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="citiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            🏙️ Cities
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="citiesDropdown">
+            <li><a class="dropdown-item" href="/spain/">🇪🇸 Spain Overview</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/spain/madrid.html">Madrid</a></li>
+            <li><a class="dropdown-item" href="/spain/barcelona.html">Barcelona</a></li>
+            <li><a class="dropdown-item" href="/spain/valencia.html">Valencia</a></li>
+            <li><a class="dropdown-item" href="/spain/sevilla.html">Seville</a></li>
+            <li><a class="dropdown-item" href="/spain/granada.html">Granada</a></li>
+            <li><a class="dropdown-item" href="/spain/malaga.html">Malaga</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events/">🎉 Events</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="guidesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            📚 Guides
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="guidesDropdown">
+            <li><a class="dropdown-item" href="/food/">🍷 Spanish Food</a></li>
+            <li><a class="dropdown-item" href="/transport/">🚆 Transportation</a></li>
+            <li><a class="dropdown-item" href="/guide/">📘 Seville Guide (PDF)</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/faq/">❓ FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact/">📬 Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
