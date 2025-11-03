@@ -466,3 +466,79 @@ html {
   transform: translateY(-3px);
 }
 
+/* 404 Error Page Styles */
+.error-page {
+  padding: 4rem 0;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.error-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.error-message {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.error-actions .btn {
+  min-width: 180px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+}
+
+/* Mobile responsiveness for 404 page */
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 6rem;
+  }
+  
+  .error-title {
+    font-size: 2rem;
+  }
+  
+  .error-message {
+    font-size: 1rem;
+  }
+  
+  .error-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .error-actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .error-actions .ms-3 {
+    margin-left: 0 !important;
+    margin-top: 1rem;
+  }
+}
+
