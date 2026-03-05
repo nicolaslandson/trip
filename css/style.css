@@ -325,6 +325,15 @@ img {
   border-radius: var(--border-radius);
 }
 
+/* Virtual guide Santa Cruz photo inside ratio box */
+#tour-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #ffffff; /* white bars around vertical photo */
+}
+
 /* City/hero images with consistent ratio */
 .city-image {
   width: 100%;
@@ -424,6 +433,7 @@ img {
   display: inline-block;
   font-size: 0.9rem;
 }
+
 
 /* Table improvements */
 table {
