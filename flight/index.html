@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Flights to Spain - Find Cheap Airfare | Tripok.es</title>
   <meta name="description" content="Compare and book cheap flights to Spain. Find best deals on flights to Madrid, Barcelona, Seville, Valencia and other Spanish cities. Money-saving tips and airline guide." />
+  <link rel="canonical" href="https://tripok.es/flight/">
+  <meta property="og:title" content="Flights to Spain - Find Cheap Airfare | Tripok.es">
+  <meta property="og:description" content="Compare and book cheap flights to Spain. Find best deals on flights to Madrid, Barcelona, Seville, Valencia and other Spanish cities. Money-saving tips and airline guide.">
+  <meta property="og:image" content="https://tripok.es/img/preview.svg">
+  <meta property="og:url" content="https://tripok.es/flight/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tripok.es">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Flights to Spain - Find Cheap Airfare | Tripok.es">
+  <meta name="twitter:description" content="Compare and book cheap flights to Spain. Find best deals on flights to Madrid, Barcelona, Seville, Valencia and other Spanish cities. Money-saving tips and airline guide.">
+  <meta name="twitter:image" content="https://tripok.es/img/preview.svg">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M1P7K7EWJ7"></script>
   <script>
@@ -23,27 +34,58 @@
 </head>
 <body>
 
-<div id="nav-placeholder"></div>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-primary" href="/">
+      <span style="font-size: 1.5rem;">✈️</span> Tripok.es
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">🏠 Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/hotel/">🏨 Hotels</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/flight/">✈️ Flights</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/spain/">🏙️ Cities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events/">🎉 Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/food/">🍷 Food</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/transport/">🚆 Transport</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/faq/">❓ FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact/">📬 Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <script>
-  fetch("/nav.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("nav-placeholder").innerHTML = html;
-      // Re-initialize Bootstrap components after navigation is loaded
-      if (typeof bootstrap !== 'undefined') {
-        // Initialize all tooltips and popovers
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-          return new bootstrap.Tooltip(tooltipTriggerEl);
-        });
-        
-        // Initialize all popovers
-        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-          return new bootstrap.Popover(popoverTriggerEl);
-        });
-      }
-    });
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof bootstrap !== "undefined") {
+      [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]')).forEach(function (el) {
+        new bootstrap.Tooltip(el);
+      });
+      [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]')).forEach(function (el) {
+        new bootstrap.Popover(el);
+      });
+    }
+  });
 </script>
 
 <!-- Breadcrumbs -->
@@ -284,7 +326,7 @@
     </div>
     <hr style="border-color: #34495e; margin: 2rem 0 1rem;">
     <div class="text-center">
-      <p class="mb-0">© 2025 Tripok.es — Your Spain Travel Planning Partner</p>
+      <p class="mb-0">© 2026 Tripok.es — Your Spain Travel Planning Partner</p>
     </div>
   </div>
 </footer>

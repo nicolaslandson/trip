@@ -6,7 +6,17 @@
   <title>Seville in 3 Days Itinerary (PDF + Maps) – Tripok.es</title>
   <meta name="description" content="Ready-to-follow Seville 3-day itinerary PDF with Google Maps links, hidden viewpoints, food spots under €10, and local tips. Instant download." />
   <link rel="canonical" href="https://tripok.es/spain/sevilla.html">
-        <!-- Google tag (gtag.js) -->
+  <meta property="og:title" content="Seville in 3 Days Itinerary (PDF + Maps) – Tripok.es">
+  <meta property="og:description" content="Ready-to-follow Seville 3-day itinerary PDF with Google Maps links, hidden viewpoints, food spots under €10, and local tips. Instant download.">
+  <meta property="og:image" content="https://tripok.es/img/preview.svg">
+  <meta property="og:url" content="https://tripok.es/spain/sevilla.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tripok.es">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Seville in 3 Days Itinerary (PDF + Maps) – Tripok.es">
+  <meta name="twitter:description" content="Ready-to-follow Seville 3-day itinerary PDF with Google Maps links, hidden viewpoints, food spots under €10, and local tips. Instant download.">
+  <meta name="twitter:image" content="https://tripok.es/img/preview.svg">
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M1P7K7EWJ7"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -72,15 +82,77 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://tripok.es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Spain",
+      "item": "https://tripok.es/spain/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Seville",
+      "item": "https://tripok.es/spain/sevilla.html"
+    }
+  ],
+  "@id": "https://tripok.es/spain/sevilla.html#breadcrumb"
+}
+</script>
 </head>
 <body>
 
-<div id="nav-placeholder"></div>
-<script>
-  fetch("/nav.html")
-    .then(res => res.text())
-    .then(html => document.getElementById("nav-placeholder").innerHTML = html);
-</script>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-primary" href="/">
+      <span style="font-size: 1.5rem;">✈️</span> Tripok.es
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">🏠 Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/hotel/">🏨 Hotels</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/flight/">✈️ Flights</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/spain/">🏙️ Cities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events/">🎉 Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/food/">🍷 Food</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/transport/">🚆 Transport</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/faq/">❓ FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact/">📬 Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <!-- Breadcrumbs -->
 <div class="container mt-3">
@@ -98,13 +170,21 @@
   <p class="text-center text-muted mb-4">Sevilla, Spain</p>
 
   <!-- Hero with image -->
-  <div class="row align-items-center mb-4">
-    <div class="col-md-6 text-center mb-3 mb-md-0">
-      <img src="/images/seville/seville-plaza-de-espana-sunrise.jpg"
-           class="img-fluid rounded shadow-sm city-image"
-           alt="Morning view of Plaza de España in Seville with reflections in the water">
+  <div class="row align-items-center g-2 mb-4">
+    <div class="col-md-auto mb-3 mb-md-0">
+      <button
+        type="button"
+        onclick="openSevilleImage('/images/seville/seville-plaza-de-espana-sunrise.jpg', 'Morning view of Plaza de España in Seville with reflections in the water')"
+        aria-label="Open Plaza de España image full size"
+        style="border: 0; background: transparent; padding: 0; width: 100%; max-width: 260px; text-align: left; cursor: zoom-in;"
+      >
+        <img src="/images/seville/seville-plaza-de-espana-sunrise.jpg"
+             class="img-fluid img-thumbnail city-image"
+             alt="Morning view of Plaza de España in Seville with reflections in the water"
+             style="width: 100%; height: auto;">
+      </button>
     </div>
-    <div class="col-md-6 text-center text-md-start">
+    <div class="col text-center text-md-start">
       <p class="lead mb-3">
         Ready-to-follow <strong>3-day Seville plan</strong> with walking routes, Google Maps links, food spots under €10, and free flamenco tips.
       </p>
@@ -147,13 +227,21 @@
   <section class="mb-5" id="overview">
     <h2 class="h4">Overview</h2>
 
-    <div class="row align-items-start mt-3">
-      <div class="col-md-4 mb-3">
-        <img src="/images/seville/seville-cathedral-giralda-tower.jpg"
-             class="img-fluid rounded city-image"
-             alt="Seville Cathedral and Giralda tower at sunset">
+    <div class="row align-items-start g-2 mt-3">
+      <div class="col-md-auto mb-3">
+        <button
+          type="button"
+          onclick="openSevilleImage('/images/seville/seville-cathedral-giralda-tower.jpg', 'Seville Cathedral and Giralda tower at sunset')"
+          aria-label="Open Seville Cathedral image full size"
+          style="border: 0; background: transparent; padding: 0; width: 100%; max-width: 260px; text-align: left; cursor: zoom-in;"
+        >
+          <img src="/images/seville/seville-cathedral-giralda-tower.jpg"
+               class="img-fluid img-thumbnail city-image"
+               alt="Seville Cathedral and Giralda tower at sunset"
+               style="width: 100%; height: auto;">
+        </button>
       </div>
-      <div class="col-md-8">
+      <div class="col">
         <p>
           Seville is the cultural heart of southern Spain and the capital of Andalusia. Known for flamenco, tapas, and stunning architecture, it's a city full of energy and history.
         </p>
@@ -259,14 +347,44 @@
       </div>
     </div>
     <div class="my-4 text-center">
-      <img src="/images/seville/seville-triana-river-view.jpg"
-           class="img-fluid rounded city-image"
-           alt="Sunset view over the Guadalquivir river towards Triana neighborhood in Seville">
+      <button
+        type="button"
+        onclick="openSevilleImage('/images/seville/seville-triana-river-view.jpg', 'Sunset view over the Guadalquivir river towards Triana neighborhood in Seville')"
+        aria-label="Open Triana river view image full size"
+        style="border: 0; background: transparent; padding: 0; width: 100%; max-width: 320px; text-align: center; cursor: zoom-in;"
+      >
+        <img src="/images/seville/seville-triana-river-view.jpg"
+             class="img-fluid img-thumbnail city-image"
+             alt="Sunset view over the Guadalquivir river towards Triana neighborhood in Seville"
+             style="width: 100%; height: auto;">
+      </button>
     </div>
     <p class="small text-muted mb-0">
       In the paid guide every bullet above becomes a detailed route with turn‑by‑turn directions, estimated walking times, and exact tapas bars that are good and not overpriced.
     </p>
   </section>
+
+  <dialog id="seville-image-dialog" style="padding: 0; border: 0; background: transparent; max-width: 95vw;">
+    <form method="dialog" style="margin: 0;">
+      <button
+        type="submit"
+        aria-label="Close full-size image"
+        style="position: absolute; top: 10px; right: 10px; z-index: 2; border: 0; border-radius: 999px; width: 36px; height: 36px; background: rgba(0,0,0,0.7); color: #fff; font-size: 20px; line-height: 1;"
+      >×</button>
+    </form>
+    <img id="seville-image-full" src="" alt="" style="display: block; width: auto; height: auto; max-width: 95vw; max-height: 95vh;">
+  </dialog>
+  <script>
+    function openSevilleImage(src, alt) {
+      var dlg = document.getElementById('seville-image-dialog');
+      var img = document.getElementById('seville-image-full');
+      if (img) {
+        img.src = src;
+        img.alt = alt + ' full size';
+      }
+      if (dlg && typeof dlg.showModal === 'function') dlg.showModal();
+    }
+  </script>
 
   <section class="mt-4" id="guide">
   <div class="highlight-box text-center">
@@ -326,7 +444,7 @@
   <div class="card mb-3">
     <div class="card-body">
       <h6 class="card-title"><strong>Is it updated?</strong></h6>
-      <p class="card-text mb-0">Yes, the guide is updated for 2025 with current opening hours, prices, and the latest local recommendations.</p>
+      <p class="card-text mb-0">Yes, the guide is updated for 2026 with current opening hours, prices, and the latest local recommendations.</p>
     </div>
   </div>
   <div class="card mb-3">
@@ -350,6 +468,11 @@
   </p>
 </div>
 </div>
+
+<section class="mb-5" id="related-guides" aria-labelledby="related-guides-heading">
+  <h2 id="related-guides-heading" class="h4">More Spain city guides</h2>
+  <p>Explore other destinations: <a href="/spain/barcelona.html">Barcelona</a>, <a href="/spain/sevilla.html">Seville</a>, <a href="/spain/granada.html">Granada</a>, <a href="/spain/valencia.html">Valencia</a>, <a href="/spain/malaga.html">Málaga</a>, <a href="/spain/madrid.html">Madrid</a>, or <a href="/spain/">browse all cities</a>.</p>
+</section>
 
 <footer>
   <div class="container">
@@ -396,7 +519,7 @@
     </div>
     <hr style="border-color: #34495e; margin: 2rem 0 1rem;">
     <div class="text-center">
-      <p class="mb-0" style="font-size: 0.9rem;">© 2025 Tripok.es — Your Spain Travel Planning Partner</p>
+      <p class="mb-0" style="font-size: 0.9rem;">© 2026 Tripok.es — Your Spain Travel Planning Partner</p>
     </div>
   </div>
 </footer>

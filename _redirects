@@ -1,0 +1,4 @@
+# Netlify: apex host + HTTPS (adjust if you use www as primary)
+https://www.tripok.es/*  https://tripok.es/:splat  301!
+http://www.tripok.es/*   https://tripok.es/:splat  301!
+http://tripok.es/*       https://tripok.es/:splat  301!

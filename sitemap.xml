@@ -3,13 +3,13 @@
   <!-- Main Pages -->
   <url>
     <loc>https://tripok.es/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tripok.es/spain/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -17,85 +17,85 @@
   <!-- City Pages (High Priority) -->
   <url>
     <loc>https://tripok.es/spain/sevilla.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tripok.es/spain/madrid.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tripok.es/spain/barcelona.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tripok.es/spain/valencia.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tripok.es/spain/granada.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tripok.es/spain/malaga.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tripok.es/spain/bilbao.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tripok.es/spain/cordoba.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tripok.es/spain/ronda.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tripok.es/spain/salamanca.html</loc>
-    <lastmod>2025-03-24</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tripok.es/spain/leon.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tripok.es/spain/zaragoza.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tripok.es/spain/burgos.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tripok.es/spain/santander.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -103,37 +103,37 @@
   <!-- Travel Guides -->
   <url>
     <loc>https://tripok.es/food/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tripok.es/transport/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tripok.es/events/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tripok.es/events/rocio.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tripok.es/events/feria.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tripok.es/guide/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -141,7 +141,7 @@
   <!-- Special Pages -->
   <url>
     <loc>https://tripok.es/lottery/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -149,37 +149,37 @@
   <!-- Service Pages -->
   <url>
     <loc>https://tripok.es/hotel/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tripok.es/flight/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tripok.es/faq/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://tripok.es/contact/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://tripok.es/privacy/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://tripok.es/terms/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

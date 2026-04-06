@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Spain Travel Budget Calculator - Plan Your Trip to Spain | Tripok.es</title>
   <meta name="description" content="Free Spain travel budget calculator. Get instant cost estimates for Madrid, Barcelona, Seville, Valencia and more. Plan hotels, flights, car rentals with real prices. City guides and travel tips included." />
+  <link rel="canonical" href="https://tripok.es/">
+  <meta property="og:title" content="Spain Travel Budget Calculator - Plan Your Trip to Spain | Tripok.es">
+  <meta property="og:description" content="Free Spain travel budget calculator. Get instant cost estimates for Madrid, Barcelona, Seville, Valencia and more. Plan hotels, flights, car rentals with real prices. City guides and travel tips included.">
+  <meta property="og:image" content="https://tripok.es/img/preview.svg">
+  <meta property="og:url" content="https://tripok.es/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tripok.es">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Spain Travel Budget Calculator - Plan Your Trip to Spain | Tripok.es">
+  <meta name="twitter:description" content="Free Spain travel budget calculator. Get instant cost estimates for Madrid, Barcelona, Seville, Valencia and more. Plan hotels, flights, car rentals with real prices. City guides and travel tips included.">
+  <meta name="twitter:image" content="https://tripok.es/img/preview.svg">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="alternate icon" href="/favicon.ico">
     <!-- Google tag (gtag.js) -->
@@ -24,29 +35,73 @@
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5100942967593669"
      crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Tripok.es",
+  "url": "https://tripok.es/",
+  "description": "Free Spain travel budget calculator. Get instant cost estimates for Madrid, Barcelona, Seville, Valencia and more. Plan hotels, flights, car rentals with real prices. City guides and travel tips included.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tripok.es"
+  }
+}
+</script>
 </head>
 <body>
-<div id="nav-placeholder"></div>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-primary" href="/">
+      <span style="font-size: 1.5rem;">✈️</span> Tripok.es
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">🏠 Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/hotel/">🏨 Hotels</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/flight/">✈️ Flights</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/spain/">🏙️ Cities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events/">🎉 Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/food/">🍷 Food</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/transport/">🚆 Transport</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/faq/">❓ FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact/">📬 Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <script>
-  fetch("/nav.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("nav-placeholder").innerHTML = html;
-      // Re-initialize Bootstrap components after navigation is loaded
-      if (typeof bootstrap !== 'undefined') {
-        // Initialize all tooltips and popovers
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-          return new bootstrap.Tooltip(tooltipTriggerEl);
-        });
-        
-        // Initialize all popovers
-        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-          return new bootstrap.Popover(popoverTriggerEl);
-        });
-      }
-    });
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof bootstrap !== "undefined") {
+      [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]')).forEach(function (el) {
+        new bootstrap.Tooltip(el);
+      });
+      [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]')).forEach(function (el) {
+        new bootstrap.Popover(el);
+      });
+    }
+  });
 </script>
 <main>
   <!-- Hero Section -->
@@ -421,7 +476,7 @@
     </div>
     <hr style="border-color: #34495e; margin: 2rem 0 1rem;">
     <div class="text-center">
-      <p class="mb-0">© 2025 Tripok.es — Your Spain Travel Planning Partner</p>
+      <p class="mb-0">© 2026 Tripok.es — Your Spain Travel Planning Partner</p>
     </div>
   </div>
 </footer>
