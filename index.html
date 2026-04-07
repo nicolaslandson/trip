@@ -152,10 +152,6 @@
           </div>
         </div>
 
-<div id="booking" class="text-center" style="display: none;">
-  <h5 class="mb-1">🏨 Hotel from €<span id="price-hotel">X</span></h5>
-</div>
-
 <div id="centauro" class="text-center mt-3" style="display: none;">
   <h5 class="mb-1">🚗 Car rental from €<span id="price-car">X</span></h5>
   Rent a car in <span id="city-centauro">your city</span> with discount
@@ -340,15 +336,12 @@
 <script>
   const form = document.getElementById("budget-form");
   const result = document.getElementById("result");
-  const booking = document.getElementById("booking");
   const guide = document.getElementById("guide");
   const centauro = document.getElementById("centauro");
   const aviasales = document.getElementById("aviasales");
-  const cityLabel = document.getElementById("city-label");
   const cityCentauro = document.getElementById("city-centauro");
   const cityAviasales = document.getElementById("city-aviasales");
 
-  const priceHotel = document.getElementById("price-hotel");
   const priceCar = document.getElementById("price-car");
   const priceFlight = document.getElementById("price-flight");
 
@@ -395,7 +388,7 @@
 
     if (!city || isNaN(days) || days < 1 || days > 7) {
       result.textContent = "Please enter a valid city and 1–7 days.";
-      [booking, guide, centauro, aviasales].forEach(el => el.style.display = "none");
+      [guide, centauro, aviasales].forEach(el => el.style.display = "none");
       return;
     }
 
@@ -414,15 +407,12 @@
 
     result.textContent = `Example trip budget: ~€${totalBudget}`;
 
-    cityLabel.textContent = city;
     cityCentauro.textContent = city;
     cityAviasales.textContent = city;
 
-    priceHotel.textContent = prices.hotel;
     priceCar.textContent = prices.car;
     priceFlight.textContent = prices.flight;
 
-    booking.style.display = "block";
     centauro.style.display = "block";
     aviasales.style.display = "block";
 
